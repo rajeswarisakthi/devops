@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A beautiful Student To-Do List app to organize tasks, track progress, and stay productive." />
+  <title>Student To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Animated background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
+
+  <div class="app-container" id="app-container">
+    <!-- Header -->
+    <header class="app-header" id="app-header">
+      <div class="header-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+          <line x1="9" y1="7" x2="17" y2="7"/>
+          <line x1="9" y1="11" x2="15" y2="11"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Student To-Do List</h1>
+        <p class="header-subtitle" id="header-subtitle">Stay organized. Stay ahead.</p>
+      </div>
+    </header>
+
+    <!-- Task Input -->
+    <form class="task-input-container" id="task-form">
+      <div class="input-wrapper" id="input-wrapper">
+        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="16"/>
+          <line x1="8" y1="12" x2="16" y2="12"/>
+        </svg>
+        <input
+          type="text"
+          id="task-input"
+          placeholder="What do you need to do today?"
+          autocomplete="off"
+          maxlength="200"
+        />
+      </div>
+      <button type="submit" class="btn-add" id="btn-add">
+        <span>Add Task</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+    </form>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat" id="stat-total">
+        <span class="stat-number" id="total-count">0</span>
+        <span class="stat-label">Total</span>
+      </div>
+      <div class="stat" id="stat-active">
+        <span class="stat-number" id="active-count">0</span>
+        <span class="stat-label">Active</span>
+      </div>
+      <div class="stat" id="stat-completed">
+        <span class="stat-number" id="completed-count">0</span>
+        <span class="stat-label">Done</span>
+      </div>
+      <div class="progress-bar-container" id="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+      <button class="filter-btn" data-filter="active" id="filter-active">Active</button>
+      <button class="filter-btn" data-filter="completed" id="filter-completed">Completed</button>
+    </div>
+
+    <!-- Task List -->
+    <ul class="task-list" id="task-list">
+      <!-- Tasks are injected here by JS -->
+    </ul>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="empty-state">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <line x1="9" y1="9" x2="15" y2="15"/>
+        <line x1="15" y1="9" x2="9" y2="15"/>
+      </svg>
+      <p>No tasks yet — add one above!</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer" id="app-footer">
+      <button class="btn-clear" id="btn-clear">Clear Completed</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
